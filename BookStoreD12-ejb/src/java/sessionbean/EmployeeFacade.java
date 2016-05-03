@@ -33,7 +33,7 @@ public class EmployeeFacade extends AbstractFacade<Employee> implements Employee
     @Override
     public boolean login(Object username, Object password) {
         // mau chot van de o day nhe
-        em = Persistence.createEntityManagerFactory("BookStoreDemo-ejbPU").createEntityManager();
+        em = Persistence.createEntityManagerFactory("BookStoreD12-ejbPU").createEntityManager();
         // chua khoi tao em
         javax.persistence.Query qr = em.createNamedQuery(Employee.class.getSimpleName() + ".login");
         qr.setParameter("username", username);

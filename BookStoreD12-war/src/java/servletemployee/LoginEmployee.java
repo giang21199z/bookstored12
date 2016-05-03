@@ -55,7 +55,7 @@ public class LoginEmployee extends HttpServlet {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin.jsp");
                 dispatcher.forward(request, response);
             } else {
-                response.sendRedirect("loginadmin.jsp");
+                response.sendRedirect("adminlogin.jsp");
             }
         }
     }
