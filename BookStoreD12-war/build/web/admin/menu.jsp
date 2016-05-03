@@ -33,7 +33,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">QL Tài khoản <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Thống kê tài khoản</a></li>
+                                    <li><a href="ManagerAccount">Thống kê tài khoản</a></li>
                                     <li><a href="#">...</a></li>
                                     <li><a href="#">...</a></li>
                                     <li class="divider"></li>

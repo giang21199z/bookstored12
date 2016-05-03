@@ -29,6 +29,7 @@ public class GetId {
     public static String GET_DETAIL_CART = "GET_DETAIL_CART";
     public static String GET_DETAIL_PERSON = "GET_DETAIL_PERSON";
     public static String GET_DETAIL_ORDER = "GET_DETAIL_ORDER";
+    public static String GET_LIST_ACCOUNT = "GET_LIST_ACCOUNT";
     
     public static int getValueId() {
         int i = (int) new Date().getTime();

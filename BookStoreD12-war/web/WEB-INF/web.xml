@@ -56,6 +56,10 @@
         <servlet-name>UpdateStatusOrder</servlet-name>
         <servlet-class>servletemployee.UpdateStatusOrder</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManagerAccount</servlet-name>
+        <servlet-class>servletemployee.ManagerAccount</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBook</servlet-name>
         <url-pattern>/ServletBook</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>UpdateStatusOrder</servlet-name>
         <url-pattern>/UpdateStatusOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManagerAccount</servlet-name>
+        <url-pattern>/ManagerAccount</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
