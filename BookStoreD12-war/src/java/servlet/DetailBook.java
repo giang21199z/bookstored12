@@ -43,6 +43,9 @@ public class DetailBook extends HttpServlet {
             String id = request.getParameter("id");
             Book book = (Book) bookFacade.find(Integer.parseInt(id));
             request.setAttribute(GetId.DETAIL_BOOK, book);
+            if(request.getParameter("quantity") != null){
+                request.setAttribute(GetId.MESSAGE_ORDER, "Bạn vừa thêm "+request.getParameter("quantity")+" cuốn sách "+book.getTitle()+" vào giỏ hàng.");
+            }
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/detail.jsp");
             dispatcher.forward(request,response);
         }

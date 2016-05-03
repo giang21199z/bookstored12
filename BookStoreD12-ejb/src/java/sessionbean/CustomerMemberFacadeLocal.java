@@ -30,5 +30,5 @@ public interface CustomerMemberFacadeLocal {
 
     int count();
 
-    boolean login(Object username, Object password);
+    CustomerMember login(Object username, Object password);
 }

@@ -10,7 +10,7 @@
                     <file>${reference.BookStoreD12-ejb.dist}</file>
                 </library>
                 <library dirs="200">
-                    <file>${file.reference.BookStoreDemo-ejb.jar}</file>
+                    <file>${file.reference.BookStoreD12-ejb.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>

@@ -31,13 +31,13 @@ public class CustomerMemberFacade extends AbstractFacade<CustomerMember> impleme
     }
 
     @Override
-    public boolean login(Object username, Object password) {
+    public CustomerMember login(Object username, Object password) {
         // mau chot van de o day nhe
-        em = Persistence.createEntityManagerFactory("BookStoreDemo-ejbPU").createEntityManager();
+        em = Persistence.createEntityManagerFactory("BookStoreD12-ejbPU").createEntityManager();
         // chua khoi tao em
         javax.persistence.Query qr = em.createNamedQuery(CustomerMember.class.getSimpleName() + ".login");
         qr.setParameter("username", username);
         qr.setParameter("password", password);
-        return qr.getResultList().size() > 0;
+        return (CustomerMember) qr.getSingleResult();
     }
 }

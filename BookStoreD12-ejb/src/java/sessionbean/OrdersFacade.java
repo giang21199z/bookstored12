@@ -8,6 +8,7 @@ package sessionbean;
 import entity.Orders;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 
 /**
@@ -26,6 +27,17 @@ public class OrdersFacade extends AbstractFacade<Orders> implements OrdersFacade
 
     public OrdersFacade() {
         super(Orders.class);
+    }
+
+    @Override
+    public void updateStatusById(Object idorder, Object status) {
+        // mau chot van de o day nhe
+        em = Persistence.createEntityManagerFactory("BookStoreD12-ejbPU").createEntityManager();
+        // chua khoi tao em
+        javax.persistence.Query qr = em.createNamedQuery(Orders.class.getSimpleName() + ".updateStatusById");
+        qr.setParameter("idorders", idorder);
+        qr.setParameter("status", status);
+        qr.executeUpdate();
     }
     
 }

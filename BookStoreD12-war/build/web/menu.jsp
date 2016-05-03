@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="entity.Cart"%>
 <%@page import="entity.CustomerMember"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div id="templatemo_menu">
@@ -12,7 +13,11 @@
         <li><a href="index.jsp" class="current">Trang chủ</a></li>
         <li><a href="cart.jsp">Giỏ hàng 
                 <b style="color: red">
-                    0
+                    <% Cart cart = (Cart) session.getAttribute("CART");
+                        if (cart != null) {
+                            out.print(cart.getBookOrderList().size());
+                        }
+                    %>
                 </b>
             </a>
         </li>

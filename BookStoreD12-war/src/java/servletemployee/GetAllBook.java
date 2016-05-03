@@ -23,7 +23,7 @@ import sessionbean.BookFacadeLocal;
  * @author GIANGND-SVMC
  */
 public class GetAllBook extends HttpServlet {
-    
+
     @EJB
     private BookFacadeLocal bookFacade;
 
@@ -44,7 +44,7 @@ public class GetAllBook extends HttpServlet {
             List<Book> listBook = bookFacade.findAll();
             request.setAttribute(GetId.GET_ALL_BOOK, listBook);
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listbook.jsp");
-                dispatcher.forward(request, response);
+            dispatcher.forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

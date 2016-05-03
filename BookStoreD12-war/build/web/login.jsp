@@ -59,5 +59,12 @@
             alert("Đăng nhập thất bại. Vui lòng thử lại");
         </script>
         <%}%>
+        <% String message = (String) request.getAttribute(GetId.MESSAGE_PAYMENT_LOGIN);
+            if (message != null) {
+        %>
+        <script>
+            alert("<%=message%>");
+        </script>
+        <%}%>
     </body>
 </html>

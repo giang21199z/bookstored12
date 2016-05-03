@@ -62,7 +62,6 @@ public class AddBook extends HttpServlet {
 
             BookSet bookSet = new BookSet(Integer.parseInt(bookset));
             book.setIdbookset(bookSet);
-
             book.setIdbook(GetId.getValueId());
             book.setTitle(title);
             book.setAuthor(author);

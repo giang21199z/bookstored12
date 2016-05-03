@@ -35,6 +35,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Orders.findAll", query = "SELECT o FROM Orders o"),
+    @NamedQuery(name = "Orders.updateStatusById", query = "UPDATE Orders o SET o.status = :status WHERE o.idorders = :idorders"),
     @NamedQuery(name = "Orders.findByIdorders", query = "SELECT o FROM Orders o WHERE o.idorders = :idorders"),
     @NamedQuery(name = "Orders.findByDate", query = "SELECT o FROM Orders o WHERE o.date = :date"),
     @NamedQuery(name = "Orders.findByStatus", query = "SELECT o FROM Orders o WHERE o.status = :status")})

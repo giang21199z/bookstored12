@@ -43,9 +43,9 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quản lý đơn hàng <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    <li><a href="GetAllOrder">Danh sách order</a></li>
                                     <li><a href="#">Thống kê</a></li>
-                                    <li><a href="#">...</a></li>
-                                    <li><a href="#">...</a></li>
+                                    <li><a href="#"></a>...</li>
                                     <li class="divider"></li>
                                     <li><a href="#">...</a></li>
                                 </ul>

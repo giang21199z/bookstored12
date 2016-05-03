@@ -26,9 +26,9 @@ import sessionbean.CustomerMemberFacadeLocal;
  * @author GIANGND-SVMC
  */
 public class Login extends HttpServlet {
-
     @EJB
     private CustomerMemberFacadeLocal customerMemberFacade;
+
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,21 +44,21 @@ public class Login extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            CustomerMember cm = new CustomerMember();
-            cm.setUsername(username);
-            cm.setPassword(password);
+//            String username = request.getParameter("username");
+//            String password = request.getParameter("password");
 
-            customerMemberFacade = new CustomerMemberFacade();
-            if (customerMemberFacade.login(username, password)) {
+            String username = "giangnd";
+            String password = "giangnd";
+            try {
+                CustomerMember cm = customerMemberFacade.login(username, password);
                 //success
                 HttpSession session = request.getSession();
                 session.setAttribute(GetId.SESSION_USER, cm);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
                 dispatcher.forward(request, response);
-            } else {
+            } catch (Exception e) {
                 //false
+                e.printStackTrace();
                 request.setAttribute(GetId.LOGIN, false);
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
                 dispatcher.forward(request, response);

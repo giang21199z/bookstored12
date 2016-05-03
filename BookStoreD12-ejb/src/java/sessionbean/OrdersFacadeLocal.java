@@ -30,4 +30,5 @@ public interface OrdersFacadeLocal {
 
     int count();
     
+    void updateStatusById(Object idorder, Object status);
 }

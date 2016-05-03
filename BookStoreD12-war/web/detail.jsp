@@ -79,12 +79,11 @@
                     <ul>
                         <li>Nhà xuất bản <a href="#"><%=book.getPublisher()%></a></li>
                         <li><%=book.getPublisherYear()%></li>
-                        <li><b>Giá gốc: <%=book.getOriginalPrice()%>00 VNĐ</b></li>
                         <li><b>Giá bán: <%=book.getSalePrice()%>00 VNĐ</b></li>
                         <li>
-                            <form action="Orders" method="post">
+                            <form action="Order" method="post">
                                 <div class="buy_now_button">
-                                    <input type="hidden" value="<%=book.getIdbook()%>" name="id">
+                                    <input type="hidden" value="<%=book.getIdbook()%>" name="idbook">
                                     Số lượng: <input style="width: 50px" type="number" value="1" name="quantity">
                                     <button style="clear: both;
                                             text-align: center;
@@ -121,12 +120,11 @@
             <!-- end of footer -->
             <!--  Free CSS Template www.templatemo.com -->
         </div> <!-- end of container -->
-        <% Book bookAdd = (Book) request.getAttribute("add_book_to_cart");
-            String quantity = (String) request.getAttribute("quantity");
-            if (bookAdd != null) {
+        <% String message = (String) request.getAttribute(GetId.MESSAGE_ORDER);
+            if (message != null) {
         %>
         <script>
-            alert("Bạn vừa thêm <%=quantity%> cuốn sách <%=bookAdd.getTitle()%> vào giỏ hàng.");
+            alert("<%=message%>");
         </script>
         <%}%>
     </body>
