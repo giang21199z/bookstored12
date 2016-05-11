@@ -22,6 +22,11 @@
 
             <div id="templatemo_content">
 
+                <form action="SearchBook" method="post">
+                    <input type="text" name="keyword">
+                    <input type="submit" value="Search">
+                </form>
+                
                 <div id="templatemo_content_left">
                     <div class="templatemo_content_left_section">
                         <h1>Categories</h1>

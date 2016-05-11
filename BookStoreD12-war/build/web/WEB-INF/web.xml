@@ -60,6 +60,18 @@
         <servlet-name>ManagerAccount</servlet-name>
         <servlet-class>servletemployee.ManagerAccount</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchBook</servlet-name>
+        <servlet-class>servlet.SearchBook</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchEmployee</servlet-name>
+        <servlet-class>servletemployee.SearchEmployee</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Demo</servlet-name>
+        <servlet-class>strategy.Demo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletBook</servlet-name>
         <url-pattern>/ServletBook</url-pattern>
@@ -119,6 +131,38 @@
     <servlet-mapping>
         <servlet-name>ManagerAccount</servlet-name>
         <url-pattern>/ManagerAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchBook</servlet-name>
+        <url-pattern>/SearchBook</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchEmployee</servlet-name>
+        <url-pattern>/SearchEmployee</url-pattern>
+    </servlet-mapping>
+    <ejb-local-ref>
+        <ejb-ref-name>PersonFacade</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessionbean.PersonFacadeLocal</local>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>EmployeeFacade</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessionbean.EmployeeFacadeLocal</local>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>CustomerMemberFacade</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessionbean.CustomerMemberFacadeLocal</local>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>BookFacade</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>sessionbean.BookFacadeLocal</local>
+    </ejb-local-ref>
+    <servlet-mapping>
+        <servlet-name>Demo</servlet-name>
+        <url-pattern>/Demo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

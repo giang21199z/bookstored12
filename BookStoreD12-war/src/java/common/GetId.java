@@ -30,7 +30,8 @@ public class GetId {
     public static String GET_DETAIL_PERSON = "GET_DETAIL_PERSON";
     public static String GET_DETAIL_ORDER = "GET_DETAIL_ORDER";
     public static String GET_LIST_ACCOUNT = "GET_LIST_ACCOUNT";
-    
+    public static String RESULT_SEARCH_BOOK = "RESULT_SEARCH_BOOK";
+    public static String GET_EMPLOYEE = "GET_EMPLOYEE";
     public static int getValueId() {
         int i = (int) new Date().getTime();
         return i > 0 ? i : i * -1;

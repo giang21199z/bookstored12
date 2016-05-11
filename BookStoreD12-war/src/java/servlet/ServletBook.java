@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import sessionbean.BookFacadeLocal;
+import strategy.RecommendBySale;
+import strategy.RecommendDation;
+import strategy.RecommendInterface;
 
 /**
  *
@@ -40,10 +43,33 @@ public class ServletBook extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            List<Book> listBook = bookFacade.findAll();
-            request.setAttribute("LISTBOOK", listBook);
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
-            dispatcher.forward(request,response);
+            String typeSuggest = request.getParameter("typeSuggest");
+            if (typeSuggest == null) {
+                List<Book> listBook = bookFacade.findAll();
+                request.setAttribute("LISTBOOK", listBook);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
+                dispatcher.forward(request, response);
+            } else {
+                if (typeSuggest.equals("price")) {
+                    RecommendInterface ri = new RecommendBySale();
+                    RecommendDation rd = new RecommendDation();
+                    rd.setRecommendInterface(ri);
+                    List<Book> listBook = rd.execute();
+                    request.setAttribute("LISTBOOK", listBook);
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
+                    dispatcher.forward(request, response);
+                }
+                if (typeSuggest.equals("quantity")) {
+                    RecommendInterface ri = new RecommendBySale();
+                    RecommendDation rd = new RecommendDation();
+                    rd.setRecommendInterface(ri);
+                    List<Book> listBook = rd.execute();
+                    request.setAttribute("LISTBOOK", listBook);
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
+                    dispatcher.forward(request, response);
+                }
+            }
+
         }
     }
 

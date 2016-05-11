@@ -22,6 +22,11 @@
 
             <div id="templatemo_content">
 
+            <form action="SearchBook" method="post">
+                <input type="text" name="keyword">
+                <input type="submit" value="Search">
+            </form>
+        
                 <div id="templatemo_content_left">
                     <div class="templatemo_content_left_section">
                         <h1>Categories</h1>
@@ -60,6 +65,13 @@
                 </div> <!-- end of content left -->
 
                 <div id="templatemo_content_right">
+                    <form method="post">
+                        <select name="typeSuggest">
+                            <option value="price">Gợi ý theo giá</option>
+                            <option value="quantity">Gợi ý theo số lượng</option>
+                        </select>
+                        <input type="submit" value="Gợi ý">
+                    </form>
 
                     <%
                         List<Book> list = (List<Book>) request.getAttribute("LISTBOOK");

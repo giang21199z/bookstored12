@@ -29,5 +29,14 @@ public interface BookFacadeLocal {
     List<Book> findRange(int[] range);
 
     int count();
+
+    List<Book> search(Object keyword);
     
+    List<Book> recommendBySalePriceAsc();
+    
+    List<Book> recommendBySalePriceDesc();
+    
+    List<Book> recommendByQuantityAsc();
+    
+    List<Book> recommendByQuantityDesc();
 }

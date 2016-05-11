@@ -11,6 +11,7 @@
 <div id="templatemo_menu">
     <ul>
         <li><a href="index.jsp" class="current">Trang chủ</a></li>
+        
         <li><a href="cart.jsp">Giỏ hàng 
                 <b style="color: red">
                     <% Cart cart = (Cart) session.getAttribute("CART");

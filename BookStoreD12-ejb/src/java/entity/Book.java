@@ -35,9 +35,14 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Book.findAll", query = "SELECT b FROM Book b"),
+    @NamedQuery(name = "Book.recommendBySalePriceAsc", query = "SELECT b FROM Book b ORDER BY b.salePrice ASC"),
+    @NamedQuery(name = "Book.recommendBySalePriceDesc", query = "SELECT b FROM Book b ORDER BY b.salePrice DESC"),
+    @NamedQuery(name = "Book.recommendByQuantityAsc", query = "SELECT b FROM Book b ORDER BY b.quantity ASC"),
+    @NamedQuery(name = "Book.recommendByQuantityDesc", query = "SELECT b FROM Book b ORDER BY b.quantity DESC"),
     @NamedQuery(name = "Book.findByIdbook", query = "SELECT b FROM Book b WHERE b.idbook = :idbook"),
     @NamedQuery(name = "Book.findByImage", query = "SELECT b FROM Book b WHERE b.image = :image"),
     @NamedQuery(name = "Book.findByTitle", query = "SELECT b FROM Book b WHERE b.title = :title"),
+    @NamedQuery(name = "Book.search", query = "SELECT b FROM Book b WHERE b.title LIKE :title"),
     @NamedQuery(name = "Book.findByAuthor", query = "SELECT b FROM Book b WHERE b.author = :author"),
     @NamedQuery(name = "Book.findByPublisher", query = "SELECT b FROM Book b WHERE b.publisher = :publisher"),
     @NamedQuery(name = "Book.findByPublisherYear", query = "SELECT b FROM Book b WHERE b.publisherYear = :publisherYear"),
